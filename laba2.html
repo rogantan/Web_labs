@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2 лаба</title>
+</head>
+<body>
+<p class="first">Заполните обязательные поля, чтобы добавить данные в таблицу</p>
+<div class="stone_type">
+    Тип камушков:
+    <select name="stoneы">
+        <option value="saphiri">Сапфиры</option>
+        <option value="rubines">Рубины</option>
+        <option value="almazy">Алмазы</option>
+    </select>
+</div>
+<div class="year">
+    Год:
+    <input type="date" id="year">✅
+</div>
+<div class="count">
+    Количество
+    <input type="number">❌
+</div>
+<div class="stones_table">
+    <p class="grag">Добыча драгоценных камней</p>
+    <table border="2" width="100%">
+        <thead>
+        <tr>
+            <th rowspan="2">Камушек</th>
+            <th scope="col" colspan="3">Год</th>
+        </tr>
+        <tr>
+            <th scope="col">2010</th>
+            <th scope="col">2012</th>
+            <th scope="col">2014</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Сапфиры</td>
+            <td rowspan="2">1483</td>
+            <td>4532</td>
+            <td>6743</td>
+        </tr>
+        <tr>
+            <td>Рубины</td>
+            <td>3835</td>
+            <td>7482</td>
+        </tr>
+        <tr>
+            <td>Алмазы</td>
+            <td>683</td>
+            <td colspan="2" align="center">238</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <p>Итого: много миллионов</p>
+                <ol type="I">
+                    <li>
+                        Итого по видам драгоценных камней: много тысяч
+                        <ul>
+                            <li>
+                                <a href="#!" >Сапфиров</a> немыслемое количество
+                            </li>
+                            <li>
+                                Но <a href="#!">рубинов</a> под конец всё же больше
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Итого по полудрагоценным камням
+                        <ul>
+                            <li>
+                                <a href="#!">Изумрудов</a> 0
+                            </li>
+                            <li>
+                                <a href="#!">Топазов</a> 0
+                            </li>
+                            <li>
+                                <a href="#!">Опалов</a> тоже 0
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
