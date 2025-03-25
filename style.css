@@ -163,17 +163,16 @@ input[type="text"] {
 
 
 footer {
-    text-align: center;
     font-family: 'Arial', sans-serif;
-    color: white;
-    position: page;
     gap: 10px;
+    color: white;
 }
 
 .separator {
     width: 100%;
     height: 1px;
-    background-color: #FFF;
+    background-color: #ffffff;
+    margin-bottom: 10px;
 }
 
 .content {
