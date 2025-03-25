@@ -34,7 +34,7 @@ function third() {
         {id: 3, idDone: true}
     ];
     const arr1 = arr.filter(value => value.idDone === true);
-    console.log(arr1);
+    alert(arr1);
 }
 
 function fourth() {
