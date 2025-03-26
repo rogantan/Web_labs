@@ -6,16 +6,32 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<h1>Лабораторные работы по веб-программированию</h1>
-<div>
-    <ol>
-        <li class="main"><a href="index.html">HTML</a></li>
-        <li class="main"><a href="laba2.html">HTML</a></li>
-        <li class="main"><a href="laba3.html">CSS</a></li>
-        <li class="main"><a href="laba4.html">Начало JS</a></li>
-        <li class="main"><a href="laba5.html">Функции в JS</a></li>
-        <li class="main"><a href="laba6.html">Функции в JS</a></li>
-    </ol>
+<header class="header">
+    <div class="container">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li><a href="main.html">Кто я?</a></li>
+                <li><a href="main_1.html">Лабораторые по вебу</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="main">
+    <h1>Кто я?</h1>
+    <div class="main__form">
+        <div class="img">
+            <img src="photo.jpg" alt="logotype">
+        </div>
+        <div class="main__form__input">
+            <p class="text">Всем привет! Меня зовут Андрей Банников.</p>
+            <p>Я учусь в <a href="https://ci.nsu.ru/">Высшем колледже информатики НГУ</a>, а также являюсь участником основого обучения в <a href="https://21-school.ru/">School 21</a>.</p>
+            <p>Пишу на многих языках программирования: C/C++, Python (в частности telebot), C# (фреймворки Windows Presentation Foundation, Xamarin Forms). Владею языком запросов SQL и основами проектирования баз данных, также предоставлением требований в нотациях Use Case, ERD, Crow's Foot.
+            Есть опыт работы с Docker и Git (GitHub и GitLab). Сейчас только начинаю изучать языки HTML, CSS и JavaScript.</p>
+            <button class="btn" onclick="location.href='https://github.com/rogantan'">Мой GitHub</button>
+        </div>
+    </div>
 </div>
+<span class="line"></span>
+<footer class="footer">Copyright ©</footer>
 </body>
 </html>
