@@ -106,3 +106,15 @@ img {
 .btn:hover {
     opacity: 0.8;
 }
+
+.part {
+    font-family: 'Arial', sans-serif;
+}
+
+.main-ol {
+    margin: 0;
+}
+
+.part-ul {
+    list-style: circle;
+}

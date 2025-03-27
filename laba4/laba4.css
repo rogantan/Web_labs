@@ -9,6 +9,7 @@ button {
     border-color: transparent;
     color: #fff;
     opacity: 0.8;
+    border-radius: 7px;
 }
 
 button:hover {
@@ -26,4 +27,8 @@ blockquote {
 
 .code {
     font-family: "Shantell Sans", cursive;
+}
+
+ul {
+    list-style: circle;
 }
