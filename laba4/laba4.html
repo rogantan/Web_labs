@@ -4,19 +4,58 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="laba4.js"></script>
+    <link rel="stylesheet" href="laba4.css">
 </head>
 <body>
-<p>1 задание</p>
-<button id="btn-first" onclick="first()">Нажми меня</button>
-<p>2 задание</p>
-<button id="btn-second" onclick="second()">Нажми меня еще</button>
-<p>3 задание</p>
-<button id="btn-third" onclick="third()">Нажми еще</button>
-<p>4 задание</p>
-<button id="btn-fourth" onclick="fourth()">Еще еще</button>
-<p>5 задание</p>
-<button id="btn-fifth" onclick="fifth()">Еще</button>
-<p>6 задание</p>
-<button id="btn-sixth" onclick="sixth()">Еще разок</button>
+<h1>4.1 JavaScript: введение в синтаксис</h1>
+<div>
+    <h2>Задание 1. Работа с переменными</h2>
+    <p>Объявите две переменные: admin и name. Запишите строку "Джон" в переменную name.
+        Скопируйте значение из переменной name в admin. Выведите на экран значение admin, используя функцию alert (должна показать «Джон»).</p>
+    <button id="btn-first" onclick="first()">Выполнить</button>
+</div>
+<div>
+    <h2>Задание 2. Исправьте сложение</h2>
+    <p>Ниже приведён код, который запрашивает у пользователя два числа и показывает их сумму. Он работает неправильно. Код в примере выводит 12
+        (для значения полей по умолчанию). В чём ошибка? Исправьте её. Результат должен быть 3.</p>
+    <blockquote>
+        <p class="code">
+            let a = prompt("Первое число?", 1);<br>
+            let b = prompt("Второе число?", 2);<br>
+            alert(a + b); // 12</p>
+    </blockquote>
+    <button id="btn-second" onclick="second()">Выполнить</button>
+</div>
+<div>
+    <h2>Задание 3. Выведите чётные числа</h2>
+    <p>При помощи цикла for выведите чётные числа от 2 до 10.</p>
+    <button id="btn-third" onclick="third()">Выполнить</button>
+</div>
+<div>
+    <h2>Задание 4. Замените for на while</h2>
+    <p>Перепишите код, заменив цикл for на while, без изменения поведения цикла.</p>
+    <blockquote>
+        <p class="code">
+            for (let i = 0; i < 3; i++) {<br>
+            alert( `number ${i}!` );<br>
+            }
+        </p>
+    </blockquote>
+    <button id="btn-fourth" onclick="fourth()">Выполнить</button>
+</div>
+<div>
+    <h2>Задание 5. Повторять цикл, пока ввод неверен</h2>
+    <p>Напишите цикл, который предлагает prompt ввести число, большее 100. Если посетитель ввёл другое число – попросить ввести ещё раз, и так далее.</p>
+    <p>Цикл должен спрашивать число пока либо посетитель не введёт число, большее 100, либо не нажмёт кнопку Отмена (ESC).</p>
+    <p>Предполагается, что посетитель вводит только числа. Предусматривать обработку нечисловых строк в этой задаче необязательно.</p>
+    <button id="btn-fifth" onclick="fifth()">Выполнить</button>
+</div>
+<div>
+    <h2>Задание 6. Простые числа</h2>
+    <p>Напишите код, который выводит все простые числа из интервала от 2 до n.</p>
+    <p>Для n = 10 результат должен быть 2,3,5,7.</p>
+    <p>P.S. Код также должен легко модифицироваться для любых других интервалов.</p>
+    <button id="btn-sixth" onclick="sixth()">Выполнить</button>
+</div>
 </body>
 </html>

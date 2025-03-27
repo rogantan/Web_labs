@@ -1,0 +1,29 @@
+body {
+    background-color: #1c1c1c;
+    color: #F4F4F4;
+    font-family: 'Arial', sans-serif, "Shantell Sans", "Marck Script", 'cursive';
+}
+
+button {
+    background-color: #c51214;
+    border-color: transparent;
+    color: #fff;
+    opacity: 0.8;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+button:active {
+    background-color: #5c5c5c;
+}
+
+blockquote {
+    padding-left: 14px;
+    border-left: #b00f13 2px solid;
+}
+
+.code {
+    font-family: "Shantell Sans", cursive;
+}
