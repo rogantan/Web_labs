@@ -67,6 +67,41 @@ function fifth() {
 
 
 
-function sixth() {
-
+function sixth(num) {
+    let arr;
+    switch (num) {
+        case 1:
+            arr = [-7, 12, 4, 6, -4, -12, 0];
+            break;
+        case 2:
+            arr = [-1, 2, 4, 7, -4, 1, -2];
+            break;
+        case 3:
+            arr = [-1, 1, 0, 1];
+            break;
+        case 4:
+            arr = [-1, 1, -1, 1];
+            break;
+        case 5:
+            arr = [1, 1, 1, 0, -1];
+            break;
+        case 6:
+            arr = [0, 0];
+            break;
+        case 7:
+            arr = [];
+            break;
+    }
+    const counts = {};
+    let pairCount = 0;
+    for (let num of arr) {
+        const complement = -num;
+        if (counts[complement] > 0) {
+            pairCount++;
+            counts[complement]--;
+        } else {
+            counts[num] = (counts[num] || 0) + 1;
+        }
+    }
+    alert(pairCount);
 }

@@ -5,14 +5,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="laba6.js"></script>
-    <link rel="stylesheet" href="laba5.css">
+    <link rel="stylesheet" href="../laba4/laba4.css">
 </head>
 <body>
-<h1>Лабораторная 4. Часть 1. Массивы в JavaScript</h1>
-<button onclick="first()"></button>
-<button onclick="second()"></button>
-<button onclick="third()"></button>
-<button onclick="fourth()"></button>
-<button onclick="fifth()"></button>
+<h1>Лабораторная 5. Часть 1. Массивы в JavaScript</h1>
+<div>
+    <h2>Задача 1</h2>
+    <ul>
+        <li>
+            <div>
+                <p>Найти максимальную разницу между элементами массива ([5, 7, 89, 54, 99] -> 94).</p>
+                <button onclick="first()">Выполнить</button>
+            </div>
+        </li>
+        <li>
+            <div>
+                <p>Вернуть массив без повторяющихся элементов ([5, 7, 89, 54, 99, 5, 54] -> 5,7,89,54,99).</p>
+                <button onclick="second()">Выполнить</button>
+            </div>
+        </li>
+        <li>
+            <div>
+                <p>Дан массив объектов, вернуть только те, у которых <i>isDone: true</i>.</p>
+                <blockquote>
+                    <p class="code">
+                        [<br>
+                        &ensp;{id: 1, idDone: true},<br>
+                        &ensp;{id: 2, idDone: false},<br>
+                        &ensp;{id: 3, idDone: true}<br>
+                        ]
+                    </p>
+                </blockquote>
+                <button onclick="third()">Выполнить</button>
+            </div>
+        </li>
+    </ul>
+</div>
+<div>
+    <h2>Задача 2</h2>
+    <ul>
+        <li>
+            <div>
+                <p>Найти элементы массива, которые больше указанного числа:</p>
+                <blockquote>
+                    <p class="code">
+                        f([1, 4, 6, 3, 2], 2) -> [4, 6, 3]
+                    </p>
+                </blockquote>
+                <button onclick="fourth()">Выполнить</button>
+            </div>
+        </li>
+        <li>
+            <div>
+                <p>Дан многомерный массив произвольной вложенности. Написать функцию, делающую из него "плоский" массив:</p>
+                <blockquote>
+                    <p class="code">
+                        f([1, 4, [34, 1, 20], [6, [6, 12, 8], 6]]) ->
+                        [1, 4, 34, 1, 20, 6, 6, 12, 8, 6]
+                    </p>
+                </blockquote>
+                <button onclick="fifth()">Выполнить</button>
+            </div>
+        </li>
+    </ul>
+</div>
+<div>
+    <h2>Задание 3</h2>
+    <p>Найти, сколько есть в массиве пар чисел, дающих в сумме 0:</p>
+    <ul>
+        <li>
+            <div>
+                <blockquote>
+                    <p class="code">f([-7, 12, 4, 6, -4, -12, 0]) -> 2 </p>
+                </blockquote>
+                <button onclick="sixth(1)">Выполнить</button>
+            </div>
+        </li>
+        <li>
+            <div>
+                <blockquote>
+                    <p class="code">f([-1, 2, 4, 7, -4, 1, -2]) -> 3</p>
+                </blockquote>
+                <button onclick="sixth(2)">Выполнить</button>
+            </div>
+        </li>
+        <li>
+            <div>
+                <blockquote>
+                    <p class="code">f([-1, 1, 0, 1]) -> 1</p>
+                </blockquote>
+                <button onclick="sixth(3)">Выполнить</button>
+            </div>
+        </li>
+        <li>
+            <div>
+                <blockquote>
+                    <p class="code">f([-1, 1, -1, 1]) -> 2</p>
+                </blockquote>
+                <button onclick="sixth(4)">Выполнить</button>
+            </div>
+        </li>
+        <li>
+            <div>
+                <blockquote>
+                    <p class="code">f([1, 1, 1, 0, -1]) -> 1</p>
+                </blockquote>
+                <button onclick="sixth(5)">Выполнить</button>
+            </div>
+        </li>
+        <li>
+            <div>
+                <blockquote>
+                    <p class="code">f([0, 0]) -> 1</p>
+                </blockquote>
+                <button onclick="sixth(6)">Выполнить</button>
+            </div>
+        </li>
+        <li>
+            <div>
+                <blockquote>
+                    <p class="code">f([]) -> 0</p>
+                </blockquote>
+                <button onclick="sixth(7)">Выполнить</button>
+            </div>
+        </li>
+    </ul>
+</div>
 </body>
 </html>
