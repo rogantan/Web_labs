@@ -118,3 +118,10 @@ img {
 .part-ul {
     list-style: circle;
 }
+
+.main a {
+    color: #c51214;
+}
+.main a:hover {
+    color: #fff;
+}
