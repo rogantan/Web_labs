@@ -22,7 +22,7 @@ button:active {
 
 blockquote {
     padding-left: 14px;
-    border-left: #b00f13 2px solid;
+    border-left: #b00f13 3px solid;
 }
 
 .code {
@@ -40,4 +40,8 @@ a {
 
 a:hover {
     color: #fff;
+}
+
+.image {
+    margin-bottom: 16px;
 }

@@ -28,6 +28,78 @@
       </div>
     </li>
   </ul>
+  <h2>Задача 2 (на промисы)</h2>
+  <div>
+    <ul>
+      <li>
+        <div>
+          <p>Написать функцию delay(N), возвращающую промис, который сделает resolve() через N секунд.</p>
+          <button>Выполнить</button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p>Решить задачу со счётчиком <i>N, N-1 ... 2, 1, 0</i> через функцию <i>delay</i>.</p>
+          <button>Выполнить</button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p>Написать функцию, возвращающую название первого репозитория на github.com по имени пользователя (2 последовательных запроса: <a href="https://api.github.com/users/%USERNAME%">ссылка</a>).</p>
+          <button>Выполнить</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <h2>Задача 3 (на async/await)</h2>
+  <div>
+    <p>Перепишите, используя async/await вместо .then/catch.</p>
+    <p>В функции getGithubUser замените рекурсию на цикл, используя async/await.</p>
+    <blockquote>
+      <p class="code">
+        class HttpError extends Error {<br>
+        &emsp;constructor(response) {<br>
+        &emsp;&emsp;super(`${response.status} for ${response.url}`);<br>
+        &emsp;&emsp;this.name = 'HttpError';<br>
+        &emsp;&emsp;this.response = response;<br>
+        &emsp;}<br>
+        }<br>
+
+        function loadJson(url) {<br>
+        &emsp;return fetch(url)<br>
+        &emsp;.then(response => {<br>
+        &emsp;&emsp;if (response.status == 200) {<br>
+        &emsp;&emsp;&emsp;return response.json();<br>
+        &emsp;&emsp;} else {<br>
+        &emsp;&emsp;&emsp;throw new HttpError(response);<br>
+        &emsp;&emsp;}<br>
+        &emsp;})<br>
+        }<br>
+
+        // Запрашивается логин, пока github не вернёт существующего пользователя.<br>
+        function getGithubUser() {<br>
+        &emsp;let name = prompt("Введите логин?", "iliakan");<br>
+
+        &emsp;return loadJson(`https://api.github.com/users/${name}`)<br>
+        &emsp;.then(user => {<br>
+        &emsp;&emsp;alert(`Полное имя: ${user.name}.`);<br>
+        &emsp;&emsp;return user;<br>
+        &emsp;})<br>
+        &emsp;.catch(err => {<br>
+        &emsp;&emsp;if (err instanceof HttpError && err.response.status == 404) {<br>
+        &emsp;&emsp;&emsp;alert("Такого пользователя не существует, пожалуйста, повторите ввод.");<br>
+        &emsp;&emsp;&emsp;return demoGithubUser();<br>
+        &emsp;&emsp;} else {<br>
+        &emsp;&emsp;&emsp;throw err;<br>
+        &emsp;&emsp;}<br>
+        &emsp;});<br>
+        }<br>
+
+        getGithubUser();<br>
+      </p>
+    </blockquote>
+    <button>Выполнить</button>
+  </div>
 </div>
 </body>
 </html>
