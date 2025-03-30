@@ -53,6 +53,10 @@ a {
 .main__form {
     display: flex;
 }
+
+.main1 {
+    display: flex;
+}
 .text {
 
 }
@@ -119,9 +123,13 @@ img {
     list-style: circle;
 }
 
-.main a {
+.main1 a {
     color: #c51214;
 }
-.main a:hover {
+.main1 a:hover {
     color: #fff;
+}
+
+.image {
+    margin: 0 auto;
 }
