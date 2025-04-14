@@ -55,21 +55,80 @@ function second() {
 } 
 
 function delay(n) {
+    return new Promise((resolve) => 
+        {setTimeout(resolve, n * 1000) });
 }
 
 function third() {
-    const promise = new Promise((resolve, reject) => {
-          reject("result");
-      });
-    promise
-  .then(
-    result => {
-      // первая функция-обработчик - запустится при вызове resolve
-      console.log("Fulfilled: " + result); // result - аргумент resolve
-    },
-    error => {
-      // вторая функция - запустится при вызове reject
-      console.log("Rejected: " + error); // error - аргумент reject
-    }
-  );
+    let n = Number(prompt("Введите n"));
+    delay(n).then(result => alert("Всё гуд!"));
 }
+
+function fourth() {
+    let n = Number(prompt("Введите n"));
+    let promise = Promise.resolve();
+    for (let i = n; i >= 0; i--) {
+        promise = promise.then(() => {
+            return delay(1).then(() => {
+                console.log(i);
+            });
+        });
+    }
+}
+
+function fifth() {
+    let promise = fetch('https://api.github.com/users/%USERNAME%').
+    then((response) => response.json()
+    .then(userData => {
+        const reposUrl = userData.reposUrl;
+        return fetch(reposUrl);
+    })
+    .then(response => {
+        return response.json();
+    })
+    .then(reposeData => {
+        const first = reposeData[0].name;
+        alert(first);
+    })
+);
+}
+
+class HttpError extends Error {
+    constructor(response) {
+      super(`${response.status} for ${response.url}`);
+      this.name = 'HttpError';
+      this.response = response;
+    }
+  }
+  
+  function loadJson(url) {
+    return fetch(url)
+      .then(response => {
+        if (response.status == 200) {
+          return response.json();
+        } else {
+          throw new HttpError(response);
+        }
+      })
+  }
+  
+  // Запрашивается логин, пока github не вернёт существующего пользователя.
+  function getGithubUser() {
+    let name = prompt("Введите логин?", "iliakan");
+  
+    return loadJson(`https://api.github.com/users/${name}`)
+      .then(user => {
+        alert(`Полное имя: ${user.name}.`);
+        return user;
+      })
+      .catch(err => {
+        if (err instanceof HttpError && err.response.status == 404) {
+          alert("Такого пользователя не существует, пожалуйста, повторите ввод.");
+          return demoGithubUser();
+        } else {
+          throw err;
+        }
+      });
+  }
+  
+  getGithubUser();
