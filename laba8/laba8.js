@@ -47,7 +47,7 @@ function createCounter(n) {
 }
 
 function second() {
-    const number = createCounter(5);
+    const number = createCounter(6);
     number.start();
     setTimeout(() => number.pause(), 1000);
     setTimeout(() => number.pause(), 5000);
@@ -77,11 +77,12 @@ function fourth() {
 }
 
 function fifth() {
-    let promise = fetch('https://api.github.com/users/%USERNAME%').
-    then((response) => response.json()
-    .then(userData => {
-        const reposUrl = userData.reposUrl;
-        return fetch(reposUrl);
+    let name = prompt("Введите имя пользователя", "rogantan");
+    let promise = fetch(`https://api.github.com/users/${name}`)
+    .then((response) => response.json()
+    .then(user => {
+        const repos = user.repos_url;
+        return fetch(repos);
     })
     .then(response => {
         return response.json();
@@ -101,34 +102,29 @@ class HttpError extends Error {
     }
   }
   
-  function loadJson(url) {
-    return fetch(url)
-      .then(response => {
-        if (response.status == 200) {
-          return response.json();
-        } else {
-          throw new HttpError(response);
-        }
-      })
+ async function loadJson(url) {
+    const file = await fetch(url);
+    if (file.status === 200) {
+        return file.json();
+    } else {
+        throw new HttpError(file.response);
+    }
   }
   
-  // Запрашивается логин, пока github не вернёт существующего пользователя.
-  function getGithubUser() {
-    let name = prompt("Введите логин?", "iliakan");
-  
-    return loadJson(`https://api.github.com/users/${name}`)
-      .then(user => {
-        alert(`Полное имя: ${user.name}.`);
+
+  async function getGithubUser() {
+    let name = prompt("Введите логин?", "rogantan");
+    try {
+        const user = await loadJson(`https://api.github.com/users/${name}`);
+        alert(user.name);
         return user;
-      })
-      .catch(err => {
-        if (err instanceof HttpError && err.response.status == 404) {
-          alert("Такого пользователя не существует, пожалуйста, повторите ввод.");
-          return demoGithubUser();
+    }
+    catch (e) {
+        if (e instanceof HttpError && e.response.status == 404) {
+            alert("Такого пользователя не существует, пожалуйста, повторите ввод.");
+            return demoGithubUser();
         } else {
-          throw err;
+            throw e;
         }
-      });
+    }
   }
-  
-  getGithubUser();
