@@ -12,8 +12,6 @@ function first() {
     counter(n);
 }
 
- 
-
 function createCounter(n) {
     let counter = n;
     let intervalId = null;

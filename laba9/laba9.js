@@ -64,6 +64,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn_fifth = document.getElementById('btn_fifth');
     const answer_fifth = document.querySelector('.answer-fifth');
     function fifth() {
+        const str = prompt("Введите строку");
+        let str1 = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+            str1 += str[i];
+        }
+        let result = "";
+        if (str === str1) {
+            result = "True";
+        } else {
+            result = "False";
+        }
+        answer_fifth.textContent = result;
+    }
+    btn_fifth.onclick = fifth;
 
+    const btn_sixth = document.getElementById('btn_sixth');
+    function sixth() {
+        const timer = setInterval(function fib(x) {
+            if (x === 0) return 0;
+            if (x === 1) return 1;
+            return fib(x - 1) + fib(x + 2);
+        }, 1000)
     }
 });
