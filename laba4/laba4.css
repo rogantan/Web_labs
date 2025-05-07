@@ -45,3 +45,17 @@ a:hover {
 .image {
     margin-bottom: 16px;
 }
+
+.image-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#counter {
+    display: flex;
+}
+
+.plus-minus {
+    width: 24px;
+    height: 24px;
+}

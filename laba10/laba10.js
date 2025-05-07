@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    // Создание слайдов
     function createSlides(data) {
         slidesContainer.innerHTML = '';
         isLoading = false;
@@ -77,8 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
             slide.setAttribute('aria-hidden', !isActive);
         });
     }
-
-    // Обработчики событий
     function setupEventListeners() {
         prevBtn.addEventListener('click', () => {
             if (currentIndex > 0) {
@@ -86,18 +83,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateSlides();
             }
         });
-
         nextBtn.addEventListener('click', () => {
             if (currentIndex < slides.length - 1) {
                 currentIndex++;
                 updateSlides();
             }
         });
-
-        // Добавляем обработчики клавиатуры для доступности
         document.addEventListener('keydown', (e) => {
             if (isLoading) return;
-
             switch(e.key) {
                 case 'ArrowLeft':
                     if (currentIndex > 0) {
@@ -114,8 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // Загрузка данных с обработкой ошибок
     async function fetchWeatherData() {
         try {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${CITY}&appid=${API}&units=metric&lang=ru`);
