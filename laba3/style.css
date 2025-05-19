@@ -158,7 +158,7 @@ input[type="text"] {
 .btn {
     background-color: transparent;
     border-color: transparent;
-    flex-direction: column;
+    margin-left: 100px;
 }
 
 

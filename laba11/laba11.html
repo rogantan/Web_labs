@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="rus">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Список дел</title>
+    <link rel="stylesheet" href="../laba3/style.css">
 </head>
 <body>
-    
+<h1>Список дел</h1>
+<div class="box">
+    <input id="type" type="text" placeholder="Новый элемент списка" align="center">
+    <button class="box-add">Создать</button>
+    <button class="box-clear">Очистить всё</button>
+</div>
+<div class="list">
+    <ul id="list"></ul>
+</div>
+<div class="filters">
+    <a href="#" class="filter-link" data-filter="all">Все</a>
+    <a href="#" class="filter-link" data-filter="completed">Сделанные</a>
+    <a href="#" class="filter-link" data-filter="active">Не сделанные</a>
+    <a href="#" class="filter-link" data-sort="name">Сортировать по имени</a>
+</div>
+<span class="separator"></span>
+<footer>Copyright ©</footer>
+<script src="laba11.js" type="module"></script>
 </body>
 </html>
